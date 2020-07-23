@@ -1,0 +1,152 @@
+html {
+  font-size: 62.5%;
+}
+
+header .textContainer h1 {
+  font-size: 8rem;
+  text-transform: capitalize;
+}
+
+header .textContainer p {
+  font-size: 3.5rem;
+}
+
+header ul li p {
+  font-size: 4rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+body, h1, h2, h3, p, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.wrapper {
+  width: 1240px;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.startButton,
+button {
+  padding: 5px 50px;
+  margin-top: 20px;
+  text-transform: capitalize;
+  font-size: 3rem;
+  cursor: pointer;
+  background: #596E79;
+  color: #F0ECE3;
+  -webkit-transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s;
+}
+
+.startButton:hover, .startButton:focus,
+button:hover,
+button:focus {
+  background: #C7B198;
+  color: #596E79;
+}
+
+.startButton:active,
+button:active {
+  opacity: 0.8;
+}
+
+button {
+  border: none;
+}
+
+header {
+  height: 100vh;
+  background: #F0ECE3;
+}
+
+header .textContainer {
+  width: 85%;
+  padding: 40px 0px;
+  margin-top: 40px;
+  text-align: center;
+  border: 10px solid #C7B198;
+  border-radius: 50px;
+  background: #DFD3C3;
+}
+
+header .textContainer h1 {
+  padding-bottom: 20px;
+}
+
+header .textContainer p {
+  width: 70%;
+  margin: 0 auto;
+}
+
+header .flexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: 0;
+      -ms-flex-align: 0;
+          align-items: 0;
+}
+
+header ul .imageContainer {
+  width: 250px;
+}
+
+header .attribution {
+  width: 280px;
+  padding: 0 20px 5px 0;
+  text-align: left;
+  font-size: 1.6rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+header .attribution a {
+  text-decoration: none;
+  color: #000000;
+}
+
+header .attribution a:hover, header .attribution a:focus {
+  color: #C7B198;
+}
+
+.questionTemplate {
+  height: 100vh;
+  background: #DFD3C3;
+}

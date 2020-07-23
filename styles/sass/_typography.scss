@@ -1,0 +1,24 @@
+html {
+  font-size: 62.5%;
+}
+
+// Header Styles
+header {
+
+  .textContainer {
+    h1 {
+      font-size: 8rem;
+      text-transform: capitalize;
+    }
+
+    p {
+      font-size: 3.5rem;
+    }
+  }
+
+  ul li p {
+    font-size: 4rem;
+    text-transform: capitalize;
+    text-align: center;
+  }
+}

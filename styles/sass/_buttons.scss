@@ -1,0 +1,30 @@
+
+.startButton,
+button {
+  padding: 5px 50px;
+  margin-top: 20px;
+
+  text-transform: capitalize;
+  font-size: 3rem;
+  cursor: pointer;
+
+  background: $buttons;
+  color: $primary;
+
+  transition: background 0.3s, color 0.3s;
+
+  &:hover,
+  &:focus {
+    background: $tertiary;
+    color: $buttons;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+}
+
+button {
+  border: none;
+}
