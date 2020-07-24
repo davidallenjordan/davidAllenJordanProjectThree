@@ -6,6 +6,7 @@ html {
 header {
 
   .textContainer {
+    text-align: center;
     h1 {
       font-size: 8rem;
       text-transform: capitalize;
@@ -21,4 +22,26 @@ header {
     text-transform: capitalize;
     text-align: center;
   }
+
+  // End of Header
+}
+
+// Main Styles
+.questionTemplate {
+  
+  h2 {
+    font-size: 4rem;
+  }
+
+  // Form Styles
+  form label {
+    font-size: 2.5rem;
+  }
+
+// End of Main
+}
+
+// Footer Styles 
+h3 {
+  font-size: 4rem;
 }

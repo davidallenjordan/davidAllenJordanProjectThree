@@ -1,0 +1,39 @@
+footer {
+  padding: 50px 0;
+  background: $primary;
+
+  position: relative; // this is for attribution, delete if not needed
+
+  // Flexing Elements
+  .flexContainer {
+    @include flex(row-reverse, 0, center);
+    flex-wrap: wrap;
+
+    .textContainer {
+      flex: 1 0 475px;
+    }
+
+    .imageContainer {
+      flex: 0 0 400px;
+    }
+  }
+  
+  // Text Container
+  .textContainer {
+    padding: 50px;
+    
+    background: $secondary;
+    border-radius: 20px;
+  }
+  
+  // Image Container
+  .imageContainer {
+    margin-right: 50px;
+  }
+  
+  .footerButton {
+    margin: 0 auto;
+  }
+  
+  
+}

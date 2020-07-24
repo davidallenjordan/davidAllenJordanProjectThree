@@ -15,7 +15,31 @@ img {
 }
 
 .wrapper {
-  width: 1240px;
-  max-width: 80%;
+  width: 80%;
+  max-width: 1240px;
   margin: 0 auto;
 }
+
+// Attribution 
+  .attribution {
+    width: 300px;
+    padding: 0 20px 5px 0;
+
+    text-align: left;
+    font-size: 1.6rem;
+
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    a {
+      text-decoration: none;
+      color: #000000;
+
+      &:hover,
+      &:focus {
+        color: $tertiary;
+      }
+    }
+  }
+

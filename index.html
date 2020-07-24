@@ -8,7 +8,7 @@
 </head>
 <body>
   
-  <header>
+  <header id="header">
     <div class="wrapper flexContainer">
 
       <div class="textContainer">
@@ -19,31 +19,31 @@
       <ul>
         <li>
           <div class="imageContainer">
-            <img src="./assets/earth.svg" alt="A symbol for the classical element earth.">
+            <img src="./assets/earth.svg" alt="A symbol for the classical element, earth.">
           </div>
           <p>Earth</p>
         </li>
         <li>
           <div class="imageContainer">
-            <img src="./assets/air.svg" alt="A symbol for the classical element air.">
+            <img src="./assets/air.svg" alt="A symbol for the classical element, air.">
           </div>
           <p>air</p>
         </li>
         <li>
           <div class="imageContainer">
-            <img src="./assets/fire.svg" alt="A symbol for the classical element fire.">
+            <img src="./assets/fire.svg" alt="A symbol for the classical element, fire.">
           </div>
           <p>fire</p>
         </li>
         <li>
           <div class="imageContainer">
-            <img src="./assets/water.svg" alt="A symbol for the classical element water.">
+            <img src="./assets/water.svg" alt="A symbol for the classical element, water.">
           </div>
           <p>water</p>
         </li>
       </ul>
 
-      <a class="startButton">start</a>
+      <a class="headerButton">start</a>
 
     </div>
       <p class="attribution"><a href="https://thenounproject.com/joens.schublade/collection/elements/">Earth</a>, <a href="https://thenounproject.com/joens.schublade/collection/elements/">Air</a>, <a href="https://thenounproject.com/joens.schublade/collection/elements/">Fire</a> and <a href="https://thenounproject.com/joens.schublade/collection/elements/">Water</a> images created by Jonah Bethlehem from the Noun Project</p>
@@ -52,41 +52,58 @@
   <main>
     
     <section class="questionTemplate">
-      <div class="wrapper">
+      <div class="wrapper flexContainer">
 
-        <div class="flexContainer">
+        <div class="content">
           <div class="textContainer">
-            <h2>Lorem ipsum dolor sit amet.</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo voluptas sapiente.</p>
+            <h2>If you could move to your dream home would you rather. . .</h2>
           </div>
   
           <form action="">
   
             <fieldset>
   
-              <label for="optionOne">Lorem, ipsum dolor.</label>
-              <input type="radio" name="choices" id="optionOne">
-    
-              <label for="optionTwo">Lorem, ipsum dolor.</label>
-              <input type="radio" name="choices" id="optionTwo">
-    
-              <label for="optionThree">Lorem, ipsum dolor.</label>
-              <input type="radio" name="choices" id="optionThree">
-    
-              <label for="optionFour">Lorem, ipsum dolor.</label>
-              <input type="radio" name="choices" id="optionFour">
+              <div>
+                <label for="optionOne" class="options">Live in a condo in a big city
+                  <input type="radio" checked="" name="choices" id="optionOne">
+                  <span class="selected"></span>
+                </label>
+              </div>    
+              
+              <div>
+                <label for="optionTwo" class="options">Have a beach house and watch the waves everyday
+                  <input type="radio" checked="" name="choices" id="optionTwo">
+                  <span class="selected"></span>
+                </label>
+              </div>    
+
+              <div>
+                <label for="optionThree" class="options">Hide away in a cabin in the woods
+                  <input type="radio" checked="" name="choices" id="optionThree">
+                  <span class="selected"></span>
+                </label>
+              </div>    
+
+              <div>
+                <label for="optionFour" class="options">Move to mars and start the colony
+                  <input type="radio" checked="" name="choices" id="optionFour">
+                  <span class="selected"></span>
+                </label>
+              </div>  
+
             </fieldset>
   
-            <button type="submit">lorem</button>
+            <button type="submit">next question</button>
           
           </form>
         </div>
 
         <div class="imageContainer">
-          
+          <img src="./assets/earth2.svg" alt="A symbol for the classical element, earth.">          
         </div>
 
       </div>
+      <p class="attribution"><a href="https://thenounproject.com/kraigmorrisroe/uploads/?i=947008">Earth</a>, <a href="https://thenounproject.com/kraigmorrisroe/uploads/?i=947009">Air</a>, <a href="https://thenounproject.com/kraigmorrisroe/uploads/?i=947010">Fire</a> and <a href="https://thenounproject.com/kraigmorrisroe/uploads/?i=947011">Water</a> images created by Kameo Gregson from Noun Project</p>
     </section>
 
   </main>
@@ -94,17 +111,21 @@
     <footer>
       <div class="wrapper flexContainer">
 
-        <div class="textcontainer">
-          <h3>Lorem ipsum dolor sit amet.</h3>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, sint!</p>
+        <div class="textContainer">
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae libero exercitationem qui, labore!</h3>
         </div>
 
         <div class="imageContainer">
-
+          <img src="./assets/earth.svg" alt="A symbol for the classical element, earth.">
         </div>
 
-        <a href="">Lorem</a>
+        <a class="footerButton" href="#header">take quiz again</a>
       </div>
+      <p class="attribution"><a href="https://thenounproject.com/joens.schublade/collection/elements/">Earth</a>, <a
+          href="https://thenounproject.com/joens.schublade/collection/elements/">Air</a>, <a
+          href="https://thenounproject.com/joens.schublade/collection/elements/">Fire</a> and <a
+          href="https://thenounproject.com/joens.schublade/collection/elements/">Water</a> images created by Jonah Bethlehem
+        from the Noun Project</p>
     </footer>
 
   <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>

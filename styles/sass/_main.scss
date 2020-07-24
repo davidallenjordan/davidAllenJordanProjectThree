@@ -1,12 +1,104 @@
 .questionTemplate {
-  height: 100vh;
+  padding: 50px 0;
   background: $secondary;
 
-  .textContainer {
-    
+  position: relative;
+
+  // Flexing three main children
+  .flexContainer {
+    height: 100%;
+
+    @include flex(row, 0, center);
+    flex-wrap: wrap;
+
+    .content {
+      flex: 1 0 475px;
+    }
+
+    .imageContainer {
+      flex: 0 0 300px;
+    }
   }
 
+  // Text Container Styles
+  .textContainer {
+    padding: 20px;
+    margin-bottom: 40px;
 
+    background: $primary;
+    border-radius: 20px;
 
+  }
+
+  // Form Styles
+  form {
+    padding: 30px;
+
+    background: $primary;
+    border-radius: 20px;
+
+    @include flex(column,0,0)
+  }
+  
+  // Radio Button Styling
+  form .options {
+
+    input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .selected {
+      width: 25px;
+      height: 25px;
+      margin-left: 10px;
+
+      background: $tertiary;
+      border: 3px solid $primary;
+      border-radius: 50%;
+
+      position: absolute;
+
+      transition: background 0.3s;
+    }
+
+    &:hover input + .selected,
+    &:focus input + .selected {
+      background: $buttons;
+    }
+
+    input:checked + .selected {
+      background: $buttons;
+      border-color: $primary;
+    }
+
+    // End of Radio
+  }
+
+  form fieldset {
+    padding: 20px;
+
+    background: $tertiary;
+    border: none;
+    border-radius: 20px;
+
+    @include flex(column, 0, 0);
+  
+    div {
+      padding: 10px 0;
+    }
+  }
+
+  form button {
+    margin-top: 30px;
+    align-self: center;
+  }
+
+  // End of Form Styles 
+
+  // Image Container
+  .imageContainer {
+    margin-left: 100px;
+  }
 
 }

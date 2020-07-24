@@ -1,14 +1,14 @@
 
 header {
-  height: 100vh;
+  padding: 50px 0;
   background: $primary;
 
-  // Text Container
+  position: relative;
+
+  // Text Container Styles
   .textContainer {
     width: 85%;
     padding: 40px 0px;
-    margin-top: 40px;
-    text-align: center;
 
     border: 10px solid $tertiary;
     border-radius: 50px;
@@ -23,9 +23,8 @@ header {
       width: 70%;
       margin: 0 auto;
     }
-
+    // End of Text Container
   }
-
 
   .flexContainer {
     @include flex(column, center, center);
@@ -34,34 +33,18 @@ header {
   // Elements
   ul {
     @include flex(row, center, 0);
+    flex-wrap: wrap;
 
     .imageContainer {
       width: 250px;
     }
   }
 
-
-  .attribution {
-    width: 280px;
-    padding: 0 20px 5px 0;
-
-    text-align: left;
-    font-size: 1.6rem;
-
-    position: absolute;
-    right: 0;
-    bottom: 0;
-
-    a {
-      text-decoration: none;
-      color: #000000;
-
-      &:hover,
-      &:focus {
-        color: $tertiary;
-      }
-    }
+  .headerButton {
+    margin-top: 20px;
   }
+
+
 
 
 
