@@ -42,22 +42,22 @@
   
   // Radio Button Styling
   form .options {
+    position: relative;
 
     input {
-      position: absolute;
       opacity: 0;
     }
 
     .selected {
       width: 25px;
       height: 25px;
-      margin-left: 10px;
 
       background: $tertiary;
       border: 3px solid $primary;
       border-radius: 50%;
 
       position: absolute;
+      top: 4px;
 
       transition: background 0.3s;
     }
@@ -69,7 +69,6 @@
 
     input:checked + .selected {
       background: $buttons;
-      border-color: $primary;
     }
 
     // End of Radio
@@ -101,4 +100,10 @@
     margin-left: 100px;
   }
 
+}
+
+
+// JavaScript Effect
+.questionTemplate {
+  display: none;
 }

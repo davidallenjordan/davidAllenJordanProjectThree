@@ -20,7 +20,7 @@ header {
     }
 
     p {
-      width: 70%;
+      width: 90%;
       margin: 0 auto;
     }
     // End of Text Container
@@ -30,18 +30,47 @@ header {
     @include flex(column, center, center);
   }
 
-  // Elements
+  // Element Image Styles
   ul {
     @include flex(row, center, 0);
     flex-wrap: wrap;
 
     .imageContainer {
       width: 250px;
+
+      transition: opacity 0.5s;
+    }
+
+    li {
+      position: relative;
+    }
+
+    .imageContainer:hover ~ .overlay {
+      opacity: 1;
+    }
+
+    .imageContainer:hover {
+      opacity: 0.15;
     }
   }
 
+  .overlay {
+    opacity: 0;
+    pointer-events: none;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40%;
+
+    transition: opacity 0.5s;
+  }
+  // End of Element Styles
+
+  // Button
   .headerButton {
     margin-top: 20px;
+    padding: 10px 65px;
   }
 
 

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What Element Are You?</title>
   <link rel="stylesheet" href="./styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lexend+Zetta&display=swap"
+    rel="stylesheet">
 </head>
 <body>
   
@@ -21,25 +23,25 @@
           <div class="imageContainer">
             <img src="./assets/earth.svg" alt="A symbol for the classical element, earth.">
           </div>
-          <p>Earth</p>
+          <p class="overlay">Earth</p>
         </li>
         <li>
           <div class="imageContainer">
             <img src="./assets/air.svg" alt="A symbol for the classical element, air.">
           </div>
-          <p>air</p>
+          <p class="overlay">air</p>
         </li>
         <li>
           <div class="imageContainer">
             <img src="./assets/fire.svg" alt="A symbol for the classical element, fire.">
           </div>
-          <p>fire</p>
+          <p class="overlay">fire</p>
         </li>
         <li>
           <div class="imageContainer">
             <img src="./assets/water.svg" alt="A symbol for the classical element, water.">
           </div>
-          <p>water</p>
+          <p class="overlay">water</p>
         </li>
       </ul>
 
@@ -65,28 +67,28 @@
   
               <div>
                 <label for="optionOne" class="options">Live in a condo in a big city
-                  <input type="radio" checked="" name="choices" id="optionOne">
+                  <input type="radio" checked="" name="choices" id="optionOne" value="air">
                   <span class="selected"></span>
                 </label>
               </div>    
               
               <div>
                 <label for="optionTwo" class="options">Have a beach house and watch the waves everyday
-                  <input type="radio" checked="" name="choices" id="optionTwo">
+                  <input type="radio" checked="" name="choices" id="optionTwo" value="water">
                   <span class="selected"></span>
                 </label>
               </div>    
 
               <div>
                 <label for="optionThree" class="options">Hide away in a cabin in the woods
-                  <input type="radio" checked="" name="choices" id="optionThree">
+                  <input type="radio" checked="" name="choices" id="optionThree" value="earth">
                   <span class="selected"></span>
                 </label>
               </div>    
 
               <div>
                 <label for="optionFour" class="options">Move to mars and start the colony
-                  <input type="radio" checked="" name="choices" id="optionFour">
+                  <input type="radio" checked="" name="choices" id="optionFour" value="fire">
                   <span class="selected"></span>
                 </label>
               </div>  
