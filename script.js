@@ -9,37 +9,86 @@ app.elements = [];
 
 // Questions
 app.questions = {
-  questionOne: "If you could move to your dream home would you rather. . .",
   questionTwo: "You've got a selection of yummy meals, would you prefer to eat. . .",
-  questionThree: "In the morning you can't live without. . .",
-  questionFour: "Your favourite creature is. . .",
-  questionFive: "When you disagree with something you. . ."
+  questionThree: "What personality traits best describes you?",
+  questionFour: "What creature do you relate to most?",
+  questionFive: "Which music do you prefer?"
 }
 
 // Answers
 app.answers = {
-  questionOne: [],
   questionTwo: [
-    {
-      answer: "Puff pastry with whipped cream",
-      value: "air"
-    },
     {
       answer: "Oysters with lemon and horseradish",
       value: "water"
     },
     {
-      answer: "Mushroom pasta with whole wheat noodles",
-      value: "earth"
+      answer: "Puff pastry with whipped cream",
+      value: "air"
     },
     {
       answer: "Indian Curry, extra-hot please!",
       value: "fire"
+    },
+    {
+      answer: "Mushroom pasta with whole wheat noodles",
+      value: "earth"
     }
   ],
-  questionThree: [],
-  questionFour: [],
-  questionFive: []
+  questionThree: [
+    {
+      answer: "Practical, focused, and disiplined",
+      value: "earth"
+    },
+    {
+      answer: "Curious, observant and restless",
+      value: "air"
+    },
+    {
+      answer: "Impulsive, humourous and dramatic",
+      value: "fire"
+    },
+    {
+      answer: "Emotional, empathetic and creative",
+      value: "water"
+    }
+  ],
+  questionFour: [
+    {
+      answer: "I like Turtles!",
+      value: "water"
+    },
+    {
+      answer: "Meerkats really vibe with me",
+      value: "earth"
+    },
+    {
+      answer: "Id rather fly like an Eagle",
+      value: "air"
+    },
+    {
+      answer: "Scorpions!!",
+      value: "fire"
+    }
+  ],
+  questionFive: [
+    {
+      answer: "Punk Rock!",
+      value: "fire"
+    },
+    {
+      answer: "Enya to the end of time",
+      value: "earth"
+    },
+    {
+      answer: "Anything that plays in a coffee shop",
+      value: "air"
+    },
+    {
+      answer: "Whale Song",
+      value: "water"
+    }
+  ]
 }
 
 // Initialize
@@ -53,56 +102,102 @@ app.start = () => {
     $('.questionTemplate').slideDown();
     $('header').slideUp();
   })
-  
-  app.formEvent();
+
+  // next question to call after hard-coded question one
+  const question = 'questionTwo'; 
+  app.formSubmit(question);
 }
 
-// listen for form submit, store selected input in object, transition to next question, repeat 4 times
-
-app.formEvent = () => {
-  $('button').on('click', (e) => {
+// listen for form submit, store selected input in object
+app.formSubmit = (num) => {
+  $('form').on('submit', (e) => {
     e.preventDefault();
     const radioValue = $('input[type="radio"]:checked').val();
 
     app.elements.push(radioValue);
-    app.quizPageTwo();
+    console.log(app.elements);
+
+    app.questionInit(num);
   })
 }
-
-// Make a next page function that is populated by information each button click
-
+// The form submit is remembering all the preivious run throughs and doubling them
 
 
-app.quizPageTwo = () => {
-  const questionTwo = app.questions.questionTwo;
-  const answerTwo = app.answers.questionTwo;
+// Checks what question to call next
+app.questionInit = (num) => {
+  if (num === 'questionTwo') {
+    app.populateQuestion('questionTwo');
+    console.log('q2')
+  } else if (num === 'questionThree') {
+    app.populateQuestion('questionThree');
+    console.log('q3');
+  } else if (num === 'questionFour') {
+    app.populateQuestion('questionFour');
+    console.log('q4');
+  } else if (num === 'questionFive') {
+    app.populateQuestion('questionFive');
+    console.log('q5');
+  }
+}
 
-  $('h2').text(questionTwo);
+// Inserts the question number into notation
+app.populateQuestion = (num) => {
+  const questionNumber = num;
+  const question = app.questions[num];
+
+  const optionOneAnswer = app.answers[num][0].answer;  
+  const optionOneValue = app.answers[num][0].value; 
+
+  const optionTwoAnswer = app.answers[num][1].answer;
+  const optionTwoValue = app.answers[num][1].value;  
+
+  const optionThreeAnswer = app.answers[num][2].answer;
+  const optionThreeValue = app.answers[num][2].value;  
+
+  const optionFourAnswer = app.answers[num][3].answer;
+  const optionFourValue = app.answers[num][3].value;  
+
+  app.nextQuestion(questionNumber, question, optionOneAnswer, optionOneValue, optionTwoAnswer, optionTwoValue, optionThreeAnswer, optionThreeValue, optionFourAnswer, optionFourValue);
+
+}
+
+// Holds HTML markup and populates each new question page
+app.nextQuestion = (num, q, aOne, vOne, aTwo, vTwo, aThree, vThree, aFour, vFour) => {
+  $('h2').text(q);
 
   $('[for="optionOne"]').html(`
-  ${answerTwo[0].answer}
-  <input type="radio" checked="" name="choices" id="optionOne" value="${answerTwo[0].value}">
+  ${aOne}
+  <input type="radio" checked="" name="choices" id="optionOne" value="${vOne}">
   <span class="selected"></span>
   `);
 
   $('[for="optionTwo"]').html(`
-  ${answerTwo[1].answer}
-  <input type="radio" checked="" name="choices" id="optionTwo" value="${answerTwo[1].value}">
+  ${aTwo}
+  <input type="radio" checked="" name="choices" id="optionTwo" value="${vTwo}">
   <span class="selected"></span>
   `);
 
   $('[for="optionThree"]').html(`
-  <input type="radio" checked="" name="choices" id="optionThree" value="${answerTwo[2].value}">
+  ${aThree}
+  <input type="radio" checked="" name="choices" id="optionThree" value="${vThree}">
   <span class="selected"></span>
-  ${answerTwo[2].answer}
   `);
 
   $('[for="optionFour"]').html(`
-  <input type="radio" checked="" name="choices" id="optionFour" value="${answerTwo[3].value}">
+  ${aFour}
+  <input type="radio" checked="" name="choices" id="optionFour" value="${vFour}">
   <span class="selected"></span>
-  ${answerTwo[3].answer}
   `);
 
+  // Check what question just ran and queue the next one
+  if (num === 'questionTwo') {
+    nextNum = 'questionThree'
+  } else if (num === 'questionThree') {
+    nextNum = 'questionFour'
+  } else if (num === 'questionFour') {
+    nextNum = 'questionFive'
+  }
+  app.formSubmit(nextNum);
 }
 
 
