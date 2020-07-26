@@ -256,30 +256,30 @@ app.nextQuestion = (num, que, aOne, vOne, aTwo, vTwo, aThree, vThree, aFour, vFo
         <fieldset>
   
           <div>
-            <label for="optionOne" class="options" tabindex="0">${aOne}
+            <label for="optionOne" class="options">${aOne}
               <input type="radio" checked="" name="choices" id="optionOne" value="${vOne}">
               <span class="selected"></span>
             </label>
           </div>    
               
           <div>
-            <label for="optionTwo" class="options" tabindex="0">${aTwo}
+            <label for="optionTwo" class="options">${aTwo}
               <input type="radio" checked="" name="choices" id="optionTwo" value="${vTwo}">
               <span class="selected"></span>
             </label>
           </div>    
 
           <div>
-            <label for="optionThree" class="options" tabindex="0">${aThree}
+            <label for="optionThree" class="options">${aThree}
               <input type="radio" checked="" name="choices" id="optionThree" value="${vThree}">
               <span class="selected"></span>
             </label>
           </div>    
 
           <div>
-            <label for="optionFour" class="options" tabindex="0">${aFour}
+            <label for="optionFour" class="options">${aFour}
               <input type="radio" checked="" name="choices" id="optionFour" value="${vFour}">
-              <span class="selected"></span>
+              <span class="selected" for="optionFour"></span>
             </label>
           </div>  
 

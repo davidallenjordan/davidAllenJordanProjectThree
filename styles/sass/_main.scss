@@ -57,6 +57,10 @@ main {
   form .options {
     input {
       opacity: 0;
+      // Accessibility grey area. Made visible on focus to ensure useable on tab 
+      &:focus {
+        opacity: 1;
+      }
     }
 
     .selected {
