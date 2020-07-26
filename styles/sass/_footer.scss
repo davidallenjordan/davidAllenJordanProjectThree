@@ -1,9 +1,8 @@
 footer {
-  height: 100vh;
-  padding: 50px 0;
+  padding: 100px 0;
   background: $primary;
 
-  position: relative; // this is for attribution, delete if not needed
+  position: relative;
 
   // Flexing Elements
   .flexContainer {
@@ -25,16 +24,25 @@ footer {
     
     background: $secondary;
     border-radius: 20px;
+
+    h3 {
+      padding-bottom: 20px;
+    }
   }
   
   // Image Container
   .imageContainer {
     margin-right: 50px;
+    padding: 20px 0;
   }
   
   .footerButton {
-    margin: 20px auto 0 auto;
-    
+    margin: 30px auto 30px auto;
+  }
+
+  // Attribution
+  .attribution {
+    width: 440px;
   }
   
   // JavaScript Effect

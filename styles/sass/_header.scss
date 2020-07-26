@@ -2,8 +2,6 @@ header {
   padding: 45px 0;
   background: $primary;
 
-  position: relative;
-
   // Text Container Styles
   .textContainer {
     width: 85%;
@@ -36,12 +34,6 @@ header {
 
     .imageContainer {
       width: 250px;
-
-      transition: opacity 0.5s;
-    }
-
-    li {
-      position: relative;
     }
 
     .imageContainer:hover ~ .overlay {
@@ -52,6 +44,11 @@ header {
       opacity: 0.15;
     }
   }
+  
+  ul .imageContainer,
+  .overlay {
+    transition: opacity 0.5s;
+  }
 
   .overlay {
     opacity: 0;
@@ -61,8 +58,6 @@ header {
     left: 0;
     right: 0;
     bottom: 40%;
-
-    transition: opacity 0.5s;
   }
   // End of Element Styles
 
@@ -72,5 +67,11 @@ header {
     padding: 10px 65px;
   }
 
-// End of Header
+  // End of Header
+  }
+
+header ul li,
+header {
+  position: relative;
 }
+

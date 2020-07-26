@@ -1,5 +1,9 @@
-// on final question, on form submit find the winner of the object and append/.text/.html to the finish page.
-// listen for 'a' click and go to beginning.
+// This script asks the user questions stored in an object and saves the values
+// Once all the questions have been answered the outcome is calculated and the matched result is taken from an object and displayed to the user
+
+
+
+
 
 // Element App
 const app = {};
@@ -132,6 +136,41 @@ app.answers = {
   // End of Answers Object 
 }
 
+// Winners Object
+app.winners = {
+  earth: 
+  {
+    header: 'Earth',
+    text: 'You are a grounded, diciplined and focused. You like to stay organized and appreciate structure in your life. You have an excellent eye for details and some may say you are a perfectionist. Congratulations Earthling!',
+    src: './assets/earth3.svg'
+  },
+  air:
+  {
+    header: 'Air',
+    text: 'You are observant and curious. You can take care of yourself and are independant. Air elementals are brilliant and always looking to enhanse themselves with knowledge. Sometimes you have a difficult time finding connections in others and just want to be understood.',
+    src: './assets/air3.svg'
+  },
+  water:
+  {
+    header: 'Water',
+    text: 'You are an emotional being. You are empathetic and find solace in exploring spiritualism and metaphysics. You find happiness in creating but find it difficult to share your thoughts and ideas. You make people vulnerable and can see their authenticity.',
+    src: './assets/water3.svg'
+  },
+  fire:
+  {
+    header: 'Fire',
+    text: 'You are naturally outgoing and perfomative. You act from the heart and are impulsive and dramatic. People find you inspirational and humourous but you need to be careful not to grow self-conscious from over-expressing yourself.',
+    src: './assets/fire3.svg'
+  },
+  tie:
+  {
+    header: 'Balanced',
+    text: 'You take many qualities from all the elements. You are balanced and find yourself at home in nature or a busy city',
+    src: './assets/balanced.svg'
+  },
+
+}
+
 // Initialize
 app.init = () => {
 app.startButton()
@@ -157,7 +196,7 @@ app.formSubmit = (num) => {
     console.log(app.elements);
 
     if (num === 'finished') {
-      app.results();
+      app.getResult();
     } else {
       app.questionInit(num);
     }
@@ -217,28 +256,28 @@ app.nextQuestion = (num, que, aOne, vOne, aTwo, vTwo, aThree, vThree, aFour, vFo
         <fieldset>
   
           <div>
-            <label for="optionOne" class="options">${aOne}
+            <label for="optionOne" class="options" tabindex="0">${aOne}
               <input type="radio" checked="" name="choices" id="optionOne" value="${vOne}">
               <span class="selected"></span>
             </label>
           </div>    
               
           <div>
-            <label for="optionTwo" class="options">${aTwo}
+            <label for="optionTwo" class="options" tabindex="0">${aTwo}
               <input type="radio" checked="" name="choices" id="optionTwo" value="${vTwo}">
               <span class="selected"></span>
             </label>
           </div>    
 
           <div>
-            <label for="optionThree" class="options">${aThree}
+            <label for="optionThree" class="options" tabindex="0">${aThree}
               <input type="radio" checked="" name="choices" id="optionThree" value="${vThree}">
               <span class="selected"></span>
             </label>
           </div>    
 
           <div>
-            <label for="optionFour" class="options">${aFour}
+            <label for="optionFour" class="options" tabindex="0">${aFour}
               <input type="radio" checked="" name="choices" id="optionFour" value="${vFour}">
               <span class="selected"></span>
             </label>
@@ -272,14 +311,83 @@ app.nextQuestion = (num, que, aOne, vOne, aTwo, vTwo, aThree, vThree, aFour, vFo
   app.formSubmit(nextNum);
 }
 
-app.results = () => {
-
+// Determine the array value that occurs most frequently
+app.getResult = () => {
   const result = app.elements;
-  console.log(result);
 
-  app.resetQuiz();
+  let numOfAir = result.filter((val) => {
+    return val === 'air';
+  })
+  console.log(numOfAir);
+  numOfAir = numOfAir.length
+  console.log(numOfAir);
+
+  let numOfWater = result.filter((val) => {
+    return val === 'water';
+  })
+  numOfWater = numOfWater.length
+
+  let numOfEarth = result.filter((val) => {
+    return val === 'earth';
+  })
+  numOfEarth = numOfEarth.length
+
+  let numOfFire = result.filter((val) => {
+    return val === 'fire';
+  })
+  numOfFire = numOfFire.length
+
+
+  if (numOfAir > numOfWater && numOfAir > numOfFire && numOfAir > numOfEarth) {
+    winner = numOfAir;
+  } else if (numOfWater > numOfAir && numOfWater > numOfFire && numOfWater > numOfEarth) {
+    winner = numOfWater;
+  } else if (numOfEarth > numOfAir && numOfEarth > numOfWater && numOfEarth > numOfFire) {
+    winner = numOfEarth;
+  } else if (numOfFire > numOfEarth && numOfFire > numOfWater && numOfFire > numOfAir) {
+    winner = numOfFire
+  } else {
+    winner = 'tie';
+  }
+
+  app.displayResult(winner, numOfAir, numOfEarth, numOfWater, numOfFire);
 }
 
+// Displays the  array on the page
+app.displayResult = (win, numOfAir, numOfEarth, numOfWater, numOfFire) => {
+  let element;
+  const winner = app.winners;
+
+  if (win === numOfAir) {
+    element = 'air';
+  } else if (win === numOfEarth) {
+    element = 'earth';
+  } else if (win === numOfWater) {
+    element = 'water';
+  } else if (win === numOfFire) {
+    element = 'fire';
+  } else if (win === 'tie') {
+    element = 'tie';
+  }
+
+  $('.result').empty();
+  $('.result').append(`
+    <div class="textContainer">
+      <h3>${winner[element].header}</h3>
+      <p>${winner[element].text}</p>
+    </div>
+
+    <div class="imageContainer">
+      <img src="${winner[element].src}" alt="A symbol for the classical element, earth.">
+    </div>
+
+    <a class="footerButton" href="#void">take quiz again</a>
+  `)
+
+  app.resetQuiz()
+}
+
+// Takes the user back to the start page and refreshes values
 app.resetQuiz = () => {
   $('.questionTemplate').slideUp();
   $('footer').slideDown();
@@ -292,71 +400,7 @@ app.resetQuiz = () => {
   })
 }
 
-
-
-
-
-
-
-
-// push all the answers onto the array. sort the array and compare the amount of strings
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Document Ready
 $(document).ready(() => {
   app.init();
 })
-
-
-
-
-
-
-
-
-// Loop through 5 possible outcomes to determine quiz answer
-    // If a category has the highest score 
-
-// consider using an array instead to store scores!!!
-
-
-// for (let element in outcomes) {
-//   console.log(outcomes[element]);
-// }
-
-// .val()
-
-
-// determine which category has the highest score
-
-// outcooomes.sort();
-// console.log(outcooomes);
-
-
-// const messy = outcomes.messy;
-
-
-// if (messy >= tidy & messy >= gourmet && messy >= basic)
-
-
-// for (let i = 0; i < 5; i++) {
-
-
-
-// }
-
-
-
-// Stretch Goals:
-// Timer counting down for each question, no point if it reaches 0

@@ -241,6 +241,7 @@ html {
 
 body {
   font-family: "Lato", sans-serif;
+  color: #000000;
 }
 
 h1,
@@ -248,10 +249,6 @@ h2,
 h3 {
   font-family: "Lexend Zetta", sans-serif;
   letter-spacing: -7px;
-}
-
-header .textContainer {
-  text-align: center;
 }
 
 header .textContainer h1 {
@@ -263,11 +260,14 @@ header .textContainer p {
   font-size: 3.5rem;
 }
 
+header .textContainer,
 header ul li p {
-  font-size: 4rem;
+  text-align: center;
+}
+
+header ul li p {
   font-weight: 700;
   text-transform: uppercase;
-  text-align: center;
 }
 
 header ul li:nth-of-type(1) p {
@@ -286,6 +286,7 @@ header ul li:nth-of-type(4) p {
   color: #1b4079;
 }
 
+header ul li p,
 .questionTemplate h2 {
   font-size: 4rem;
 }
@@ -294,8 +295,13 @@ header ul li:nth-of-type(4) p {
   font-size: 2.5rem;
 }
 
-h3 {
-  font-size: 4rem;
+footer h3 {
+  font-size: 6.5rem;
+}
+
+footer p {
+  font-size: 3rem;
+  line-height: 1.3;
 }
 
 body, h1, h2, h3, p, ul {
@@ -317,6 +323,10 @@ img {
   width: 85%;
   max-width: 1240px;
   margin: 0 auto;
+}
+
+body {
+  background: #F0ECE3;
 }
 
 .attributionBox {
@@ -392,7 +402,6 @@ button {
 header {
   padding: 45px 0;
   background: #F0ECE3;
-  position: relative;
 }
 
 header .textContainer {
@@ -448,12 +457,6 @@ header ul {
 
 header ul .imageContainer {
   width: 250px;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-}
-
-header ul li {
-  position: relative;
 }
 
 header ul .imageContainer:hover ~ .overlay {
@@ -464,6 +467,12 @@ header ul .imageContainer:hover {
   opacity: 0.15;
 }
 
+header ul .imageContainer,
+header .overlay {
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
 header .overlay {
   opacity: 0;
   pointer-events: none;
@@ -471,8 +480,6 @@ header .overlay {
   left: 0;
   right: 0;
   bottom: 40%;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
 }
 
 header .headerButton {
@@ -480,14 +487,17 @@ header .headerButton {
   padding: 10px 65px;
 }
 
+header ul li,
+header {
+  position: relative;
+}
+
 main {
   background: #DFD3C3;
 }
 
 .questionTemplate {
-  height: 100vh;
-  padding: 50px 0;
-  position: relative;
+  padding: 100px 0;
 }
 
 .questionTemplate .flexContainer {
@@ -522,16 +532,27 @@ main {
 }
 
 .questionTemplate .textContainer {
-  padding: 20px;
   margin-bottom: 40px;
-  background: #F0ECE3;
+}
+
+.questionTemplate .textContainer,
+.questionTemplate form fieldset {
+  padding: 20px;
+}
+
+.questionTemplate .textContainer,
+.questionTemplate form,
+.questionTemplate form fieldset {
   border-radius: 20px;
+}
+
+.questionTemplate .textContainer,
+.questionTemplate form {
+  background: #F0ECE3;
 }
 
 .questionTemplate form {
   padding: 30px;
-  background: #F0ECE3;
-  border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -551,10 +572,6 @@ main {
   margin-left: 40px;
 }
 
-.questionTemplate form .options {
-  position: relative;
-}
-
 .questionTemplate form .options input {
   opacity: 0;
 }
@@ -562,7 +579,6 @@ main {
 .questionTemplate form .options .selected {
   width: 25px;
   height: 25px;
-  background: #C7B198;
   border: 3px solid #F0ECE3;
   border-radius: 50%;
   position: absolute;
@@ -581,11 +597,13 @@ main {
   background: #596E79;
 }
 
+.questionTemplate form .options .selected,
 .questionTemplate form fieldset {
-  padding: 20px;
   background: #C7B198;
+}
+
+.questionTemplate form fieldset {
   border: none;
-  border-radius: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -616,13 +634,17 @@ main {
   margin-left: 100px;
 }
 
+.questionTemplate,
+form .options {
+  position: relative;
+}
+
 .questionTemplate {
   display: none;
 }
 
 footer {
-  height: 100vh;
-  padding: 50px 0;
+  padding: 100px 0;
   background: #F0ECE3;
   position: relative;
   display: none;
@@ -664,15 +686,33 @@ footer .textContainer {
   border-radius: 20px;
 }
 
+footer .textContainer h3 {
+  padding-bottom: 20px;
+}
+
 footer .imageContainer {
   margin-right: 50px;
+  padding: 20px 0;
 }
 
 footer .footerButton {
-  margin: 20px auto 0 auto;
+  margin: 30px auto 30px auto;
+}
+
+footer .attribution {
+  width: 440px;
+}
+
+@media (max-width: 1175px) {
+  header ul {
+    width: 78%;
+  }
 }
 
 @media (max-width: 800px) {
+  header ul {
+    width: 100%;
+  }
   header .textContainer h1 {
     font-size: 5.5rem;
   }
@@ -697,15 +737,18 @@ footer .footerButton {
   header {
     padding: 0 0 45px 0;
   }
-  header .wrapper {
+  header .wrapper,
+  header .textContainer {
     width: 100%;
   }
   header .textContainer {
-    width: 100%;
     padding: 30px 0;
     border-left: none;
     border-right: none;
     border-radius: 0;
+  }
+  header .textContainer h1 {
+    font-size: 3.5rem;
   }
 }
 
@@ -744,6 +787,9 @@ footer .footerButton {
 }
 
 @media (max-width: 767px) {
+  .questionTemplate {
+    padding: 45px 0;
+  }
   .questionTemplate .flexContainer {
     display: block;
   }
@@ -757,12 +803,20 @@ footer .footerButton {
 }
 
 @media (max-width: 460px) {
+  .questionTemplate .textContainer {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
   button {
     font-size: 2.2rem;
     padding: 10px 20px;
   }
   .questionTemplate {
     padding: 20px 0;
+  }
+  .questionTemplate .imageContainer,
+  .questionTemplate form button {
+    margin-top: 20px;
   }
   .questionTemplate h2 {
     font-size: 2.5rem;
@@ -771,13 +825,83 @@ footer .footerButton {
     padding: 0;
     background: none;
   }
+  .questionTemplate form fieldset {
+    padding: 15px;
+  }
   .questionTemplate form label {
     font-size: 2rem;
   }
-  .questionTemplate .attributionBox {
-    display: block;
+}
+
+@media (max-width: 880px) {
+  footer {
+    padding: 45px 0;
   }
-  .questionTemplate .attribution {
+  footer .imageContainer {
+    margin: 0 auto;
+  }
+  footer h3 {
+    font-size: 6rem;
+  }
+  footer p {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 565px) {
+  footer .wrapper {
+    width: 90%;
+  }
+  footer .flexContainer .textContainer {
+    padding: 30px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  footer .flexContainer .textContainer h3 {
+    font-size: 5.5rem;
+  }
+  footer .flexContainer .textContainer p {
+    font-size: 2.25rem;
+  }
+  footer .imageContainer {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 440px) {
+  footer {
+    padding-top: 20px;
+  }
+  footer .flexContainer .textContainer {
+    padding: 15px;
+  }
+  footer .flexContainer .textContainer h3 {
+    font-size: 4rem;
+    padding-bottom: 10px;
+  }
+  footer .flexContainer .textContainer p {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  footer .flexContainer .imageContainer {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 280px;
+            flex: 0 0 280px;
+    padding: 5px 0;
+  }
+  footer .footerButton {
+    margin-top: 10px;
+    padding: 10px 30px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .attribution,
+  footer .attribution {
+    width: 100%;
     padding: 5px;
+    display: block;
   }
 }

@@ -1,13 +1,24 @@
 // Header Queries ----->
+@media (max-width: 1175px) {
+  header ul {
+    width: 78%;
+  }
+}
+
 @media (max-width: 800px) {
+  header {
+    ul {
+      width: 100%;
+    } 
 
-  header .textContainer {
-    h1 {
-      font-size: 5.5rem;
-    }
-
-    p {
-      font-size: 2.75rem;
+    .textContainer {
+      h1 {
+        font-size: 5.5rem;
+      }
+    
+      p {
+        font-size: 2.75rem;
+      }
     }
   }
 
@@ -15,7 +26,6 @@
 }
 
 @media (max-width: 625px) {
-
   header .textContainer {
     h1 {
       font-size: 4rem;
@@ -24,33 +34,41 @@
     p {
       font-size: 2rem;
     }
+
   }
 
   header ul .imageContainer {
     width: 150px;
   }
+  
+// End of Query
 }
 
 @media (max-width: 450px) {
   header {
     padding: 0 0 45px 0;
-    .wrapper {
+    .wrapper,
+    .textContainer {
       width: 100%;
     }
 
     .textContainer {
-      width: 100%;
       padding: 30px 0;
 
       border-left: none;
       border-right: none;
       border-radius: 0;
+
+      h1 {
+        font-size: 3.5rem;
+      }
     }
   }
 
 // End of Query
 }
 // End of Header Queries ----->
+
 
 // Main Queries ----->
 @media (max-width: 1029px) {
@@ -68,6 +86,8 @@
       margin-left: 40px;
     }
   }
+
+  // End of Query
 }
 
 @media (max-width: 910px) {
@@ -101,6 +121,7 @@
 
 @media (max-width: 767px) {
   .questionTemplate {
+    padding: 45px 0;
 
     .flexContainer {
       display: block;
@@ -115,9 +136,15 @@
       }
     }
   }
+  // End of Query
 }
 
 @media (max-width: 460px) {
+  .questionTemplate .textContainer {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+
   button {
     font-size: 2.2rem;
     padding: 10px 20px;
@@ -126,6 +153,11 @@
   .questionTemplate {
     padding: 20px 0;
 
+    .imageContainer,
+    form button {
+      margin-top: 20px;
+    }
+
     h2 {
       font-size: 2.5rem;
     }
@@ -133,21 +165,112 @@
     form {
       padding: 0;
       background: none;
+
+      fieldset {
+        padding: 15px;
+      }
+
+      label {
+        font-size: 2rem;
+      }
     }
 
-    form label {
-      font-size: 2rem;
-    }
-
-    .attributionBox {
-      display: block;
-    }
-    
-    .attribution {
-      padding: 5px;
-
-    }
   }
   // End of Query
 }
 // End of Main Queries ----->
+
+
+// Footer Queries ----->
+@media (max-width: 880px) {
+  footer {
+    padding: 45px 0;
+    .imageContainer {
+      margin: 0 auto;
+    }
+
+    h3 {
+      font-size: 6rem;
+    }
+
+    p {
+      font-size: 2.75rem;
+    }
+  }
+
+  // End of Query
+}
+
+@media (max-width: 565px) {
+  footer {
+    .wrapper {
+      width: 90%;
+    }
+
+
+    .flexContainer .textContainer {
+      padding: 30px;
+      flex: 1;
+
+      h3 {
+        font-size: 5.5rem;
+      }
+
+      p {
+        font-size: 2.25rem;
+      }
+    }
+
+    .imageContainer {
+      padding-bottom: 0;
+    }
+  }
+
+  // End of Query
+}
+
+@media (max-width: 440px) {
+  footer {
+    padding-top: 20px;
+
+    .flexContainer .textContainer {
+      padding: 15px;
+
+      h3 {
+        font-size: 4rem;
+        padding-bottom: 10px;
+      }
+
+      p {
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+    }
+
+    .flexContainer .imageContainer {
+      flex: 0 0 280px;
+      padding: 5px 0;
+    }
+
+    .footerButton {
+      margin-top: 10px;
+      padding: 10px 30px;
+
+      font-size: 2.5rem;
+    }
+  }
+  
+  // End of Query
+}
+
+// End of Footer Queries ----->
+
+// Global Query - Attribution **
+@media (max-width: 650px) {
+  .attribution,
+  footer .attribution {
+    width: 100%;
+    padding: 5px;
+    display: block;
+  }
+}
