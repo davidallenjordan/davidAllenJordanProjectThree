@@ -807,13 +807,9 @@ footer .attribution {
 }
 
 @media (max-width: 460px) {
-  .questionTemplate .textContainer {
-    margin-bottom: 15px;
-    padding: 15px;
-  }
   button {
-    font-size: 2.2rem;
-    padding: 10px 20px;
+    font-size: 2.5rem;
+    padding: 10px 30px;
   }
   .questionTemplate {
     padding: 20px 0;
@@ -821,6 +817,13 @@ footer .attribution {
   .questionTemplate .imageContainer,
   .questionTemplate form button {
     margin-top: 20px;
+  }
+  .questionTemplate .textContainer {
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+  .questionTemplate .imageContainer {
+    width: 40%;
   }
   .questionTemplate h2 {
     font-size: 2.5rem;
