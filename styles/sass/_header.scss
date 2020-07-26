@@ -1,6 +1,5 @@
-
 header {
-  padding: 50px 0;
+  padding: 45px 0;
   background: $primary;
 
   position: relative;
@@ -8,7 +7,7 @@ header {
   // Text Container Styles
   .textContainer {
     width: 85%;
-    padding: 40px 0px;
+    padding: 20px 0px;
 
     border: 10px solid $tertiary;
     border-radius: 50px;
@@ -69,12 +68,9 @@ header {
 
   // Button
   .headerButton {
-    margin-top: 20px;
+    margin: 20px 0 20px 0;
     padding: 10px 65px;
   }
 
-
-
-
-
+// End of Header
 }

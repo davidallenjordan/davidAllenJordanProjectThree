@@ -15,12 +15,20 @@ img {
 }
 
 .wrapper {
-  width: 80%;
+  width: 85%;
   max-width: 1240px;
   margin: 0 auto;
 }
 
+// body {
+//   // background: $secondary;
+// }
+
 // Attribution 
+  .attributionBox {
+    @include flex(0, flex-end, 0);
+  }
+
   .attribution {
     width: 325px;
     padding: 0 20px 5px 0;
@@ -29,8 +37,8 @@ img {
     font-size: 1.6rem;
 
     position: absolute;
-    right: 0;
     bottom: 0;
+    right: 0;
 
     a {
       text-decoration: none;

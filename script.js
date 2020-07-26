@@ -4,19 +4,42 @@
 // Element App
 const app = {};
 
-// Element Object
+// Element Array
 app.elements = [];
 
-// Questions
+// Questions Object
 app.questions = {
+  questionOne: "If you could move to your dream home would you rather. . .",
   questionTwo: "You've got a selection of yummy meals, would you prefer to eat. . .",
   questionThree: "What personality traits best describes you?",
   questionFour: "What creature do you relate to most?",
   questionFive: "Which music do you prefer?"
 }
 
-// Answers
+// Answers Object
 app.answers = {
+  questionOne: [
+    {
+      answer: "Live in a condo in a big city",
+      value: "air"
+    },
+    {
+      answer: "Have a beach house and watch the waves everyday",
+      value: "water"
+    },
+    {
+      answer: "Hide away in a cabin in the woods",
+      value: "earth"
+    },
+    {
+      answer: "Move to mars and start the colony",
+      value: "fire"
+    },
+    {
+      src: "./assets/earth2.svg",
+      name: "earth"
+    },
+  ],
   questionTwo: [
     {
       answer: "Oysters with lemon and horseradish",
@@ -27,12 +50,16 @@ app.answers = {
       value: "air"
     },
     {
-      answer: "Indian Curry, extra-hot please!",
+      answer: "Indian curry, extra-hot please!",
       value: "fire"
     },
     {
       answer: "Mushroom pasta with whole wheat noodles",
       value: "earth"
+    },
+    {
+      src: "./assets/air2.svg",
+      name: "air"
     }
   ],
   questionThree: [
@@ -51,33 +78,42 @@ app.answers = {
     {
       answer: "Emotional, empathetic and creative",
       value: "water"
+    },
+    {
+      src: "./assets/fire2.svg",
+      name: "fire"
     }
   ],
   questionFour: [
     {
-      answer: "I like Turtles!",
+      answer: "I like turtles",
       value: "water"
     },
     {
-      answer: "Meerkats really vibe with me",
+      answer: "Meerkats are my friends",
       value: "earth"
     },
     {
-      answer: "Id rather fly like an Eagle",
+      answer: "I'd rather fly like an eagle",
       value: "air"
     },
     {
-      answer: "Scorpions!!",
-      value: "fire"
-    }
-  ],
-  questionFive: [
-    {
-      answer: "Punk Rock!",
+      answer: "Scorpions",
       value: "fire"
     },
     {
-      answer: "Enya to the end of time",
+      src: "./assets/water2.svg",
+      name: "water"
+    }
+
+  ],
+  questionFive: [
+    {
+      answer: "Punk Rock",
+      value: "fire"
+    },
+    {
+      answer: "Enya, obviously",
       value: "earth"
     },
     {
@@ -87,25 +123,28 @@ app.answers = {
     {
       answer: "Whale Song",
       value: "water"
+    },
+    {
+      src: "./assets/earthWater.svg",
+      name: "earth and water"
     }
   ]
+  // End of Answers Object 
 }
 
 // Initialize
 app.init = () => {
-app.start()
+app.startButton()
 }
 
-// listen for 'start' click and transition to question page
-app.start = () => {
+// listen for 'start' button click and transition to question page
+app.startButton = () => {
   $('.headerButton').on('click', () => {
+    app.questionInit();
     $('.questionTemplate').slideDown();
     $('header').slideUp();
   })
-
-  // next question to call after hard-coded question one
-  const question = 'questionTwo'; 
-  app.formSubmit(question);
+  app.formSubmit();
 }
 
 // listen for form submit, store selected input in object
@@ -117,26 +156,26 @@ app.formSubmit = (num) => {
     app.elements.push(radioValue);
     console.log(app.elements);
 
-    app.questionInit(num);
+    if (num === 'finished') {
+      app.results();
+    } else {
+      app.questionInit(num);
+    }
   })
 }
-// The form submit is remembering all the preivious run throughs and doubling them
-
 
 // Checks what question to call next
 app.questionInit = (num) => {
   if (num === 'questionTwo') {
     app.populateQuestion('questionTwo');
-    console.log('q2')
   } else if (num === 'questionThree') {
     app.populateQuestion('questionThree');
-    console.log('q3');
   } else if (num === 'questionFour') {
     app.populateQuestion('questionFour');
-    console.log('q4');
   } else if (num === 'questionFive') {
     app.populateQuestion('questionFive');
-    console.log('q5');
+  } else {
+    app.populateQuestion('questionOne');
   }
 }
 
@@ -157,49 +196,101 @@ app.populateQuestion = (num) => {
   const optionFourAnswer = app.answers[num][3].answer;
   const optionFourValue = app.answers[num][3].value;  
 
-  app.nextQuestion(questionNumber, question, optionOneAnswer, optionOneValue, optionTwoAnswer, optionTwoValue, optionThreeAnswer, optionThreeValue, optionFourAnswer, optionFourValue);
+  const image = app.answers[num][4];
+
+  app.nextQuestion(questionNumber, question, optionOneAnswer, optionOneValue, optionTwoAnswer, optionTwoValue, optionThreeAnswer, optionThreeValue, optionFourAnswer, optionFourValue, image);
 
 }
 
 // Holds HTML markup and populates each new question page
-app.nextQuestion = (num, q, aOne, vOne, aTwo, vTwo, aThree, vThree, aFour, vFour) => {
-  $('h2').text(q);
+app.nextQuestion = (num, que, aOne, vOne, aTwo, vTwo, aThree, vThree, aFour, vFour, image) => {
+  $('.formPage').empty();
+  $('.formPage').append(`
 
-  $('[for="optionOne"]').html(`
-  ${aOne}
-  <input type="radio" checked="" name="choices" id="optionOne" value="${vOne}">
-  <span class="selected"></span>
-  `);
+    <div class="content">
+      <div class="textContainer">
+        <h2>${que}</h2>
+      </div>
 
-  $('[for="optionTwo"]').html(`
-  ${aTwo}
-  <input type="radio" checked="" name="choices" id="optionTwo" value="${vTwo}">
-  <span class="selected"></span>
-  `);
+      <form>
+  
+        <fieldset>
+  
+          <div>
+            <label for="optionOne" class="options">${aOne}
+              <input type="radio" checked="" name="choices" id="optionOne" value="${vOne}">
+              <span class="selected"></span>
+            </label>
+          </div>    
+              
+          <div>
+            <label for="optionTwo" class="options">${aTwo}
+              <input type="radio" checked="" name="choices" id="optionTwo" value="${vTwo}">
+              <span class="selected"></span>
+            </label>
+          </div>    
 
-  $('[for="optionThree"]').html(`
-  ${aThree}
-  <input type="radio" checked="" name="choices" id="optionThree" value="${vThree}">
-  <span class="selected"></span>
-  `);
+          <div>
+            <label for="optionThree" class="options">${aThree}
+              <input type="radio" checked="" name="choices" id="optionThree" value="${vThree}">
+              <span class="selected"></span>
+            </label>
+          </div>    
 
-  $('[for="optionFour"]').html(`
-  ${aFour}
-  <input type="radio" checked="" name="choices" id="optionFour" value="${vFour}">
-  <span class="selected"></span>
-  `);
+          <div>
+            <label for="optionFour" class="options">${aFour}
+              <input type="radio" checked="" name="choices" id="optionFour" value="${vFour}">
+              <span class="selected"></span>
+            </label>
+          </div>  
+
+        </fieldset>
+  
+        <button type="submit">next question</button>
+          
+      </form>
+    </div>
+
+    <div class="imageContainer">
+      <img src="${image.src}" alt="A symbol for the classical element, ${image.name}.">          
+    </div>
+  `)
 
   // Check what question just ran and queue the next one
-  if (num === 'questionTwo') {
-    nextNum = 'questionThree'
+  if (num === 'questionOne') {
+    nextNum = 'questionTwo';
+  } else if (num === 'questionTwo') {
+    nextNum = 'questionThree';
   } else if (num === 'questionThree') {
-    nextNum = 'questionFour'
+    nextNum = 'questionFour';
   } else if (num === 'questionFour') {
-    nextNum = 'questionFive'
+    nextNum = 'questionFive';
+  } else if (num === 'questionFive') {
+    nextNum = 'finished';
   }
+
   app.formSubmit(nextNum);
 }
 
+app.results = () => {
+
+  const result = app.elements;
+  console.log(result);
+
+  app.resetQuiz();
+}
+
+app.resetQuiz = () => {
+  $('.questionTemplate').slideUp();
+  $('footer').slideDown();
+
+  $('.footerButton').on('click', () => {
+    $('header').slideDown();
+    $('footer').slideUp();
+
+    app.elements = [];
+  })
+}
 
 
 

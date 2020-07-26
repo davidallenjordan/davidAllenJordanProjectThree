@@ -1,8 +1,7 @@
-
 .headerButton,
 button,
 .footerButton {
-  padding: 5px 50px;
+  padding: 10px 50px;
 
   text-transform: capitalize;
   text-decoration: none;
@@ -17,7 +16,7 @@ button,
   transition: background 0.3s, color 0.3s;
 
   &:hover,
-  &:focus {
+  &:focus-within {
     background: $tertiary;
     color: $buttons;
   }
@@ -25,7 +24,6 @@ button,
   &:active {
     transform: scale(1.05);
   }
-
 }
 
 button {

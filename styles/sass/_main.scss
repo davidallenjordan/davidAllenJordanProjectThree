@@ -1,6 +1,11 @@
-.questionTemplate {
-  padding: 50px 0;
+main {
   background: $secondary;
+
+}
+
+.questionTemplate {
+  height: 100vh;
+  padding: 50px 0;  
 
   position: relative;
 
@@ -27,7 +32,6 @@
 
     background: $primary;
     border-radius: 20px;
-
   }
 
   // Form Styles
@@ -36,14 +40,18 @@
 
     background: $primary;
     border-radius: 20px;
+    
+    @include flex(column,0,0);
 
-    @include flex(column,0,0)
+    div {
+      margin-left: 40px;
+    }
   }
   
   // Radio Button Styling
   form .options {
     position: relative;
-
+    
     input {
       opacity: 0;
     }
@@ -57,6 +65,7 @@
       border-radius: 50%;
 
       position: absolute;
+      left: -40px;
       top: 4px;
 
       transition: background 0.3s;
@@ -100,6 +109,7 @@
     margin-left: 100px;
   }
 
+  // End of .questionTemplate
 }
 
 

@@ -1,0 +1,153 @@
+// Header Queries ----->
+@media (max-width: 800px) {
+
+  header .textContainer {
+    h1 {
+      font-size: 5.5rem;
+    }
+
+    p {
+      font-size: 2.75rem;
+    }
+  }
+
+  // End of Query
+}
+
+@media (max-width: 625px) {
+
+  header .textContainer {
+    h1 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 2rem;
+    }
+  }
+
+  header ul .imageContainer {
+    width: 150px;
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    padding: 0 0 45px 0;
+    .wrapper {
+      width: 100%;
+    }
+
+    .textContainer {
+      width: 100%;
+      padding: 30px 0;
+
+      border-left: none;
+      border-right: none;
+      border-radius: 0;
+    }
+  }
+
+// End of Query
+}
+// End of Header Queries ----->
+
+// Main Queries ----->
+@media (max-width: 1029px) {
+  .questionTemplate {
+
+    .wrapper {
+      width: 90%;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+    }
+
+    .imageContainer {
+      margin-left: 40px;
+    }
+  }
+}
+
+@media (max-width: 910px) {
+  .questionTemplate {
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    form label {
+      font-size: 2.25rem;
+    }
+
+    .imageContainer img {
+      width: 250px;
+    }
+
+    .flexContainer {
+      .content {
+        flex: 1 0 400px;
+      }
+  
+      .imageContainer {
+        flex: 0 0 250px;
+      }
+    }
+
+  }
+  // End of Query
+}
+
+@media (max-width: 767px) {
+  .questionTemplate {
+
+    .flexContainer {
+      display: block;
+    }
+
+    .imageContainer {
+      margin: 40px auto 40px auto;
+      width: 65%;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  button {
+    font-size: 2.2rem;
+    padding: 10px 20px;
+  }
+
+  .questionTemplate {
+    padding: 20px 0;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    form {
+      padding: 0;
+      background: none;
+    }
+
+    form label {
+      font-size: 2rem;
+    }
+
+    .attributionBox {
+      display: block;
+    }
+    
+    .attribution {
+      padding: 5px;
+
+    }
+  }
+  // End of Query
+}
+// End of Main Queries ----->

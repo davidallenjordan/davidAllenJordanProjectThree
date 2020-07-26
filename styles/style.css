@@ -255,7 +255,7 @@ header .textContainer {
 }
 
 header .textContainer h1 {
-  font-size: 8rem;
+  font-size: 7rem;
   text-transform: capitalize;
 }
 
@@ -314,9 +314,25 @@ img {
 }
 
 .wrapper {
-  width: 80%;
+  width: 85%;
   max-width: 1240px;
   margin: 0 auto;
+}
+
+.attributionBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: 0;
+          flex-direction: 0;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: 0;
+      -ms-flex-align: 0;
+          align-items: 0;
 }
 
 .attribution {
@@ -325,8 +341,8 @@ img {
   text-align: left;
   font-size: 1.6rem;
   position: absolute;
-  right: 0;
   bottom: 0;
+  right: 0;
 }
 
 .attribution a {
@@ -341,7 +357,7 @@ img {
 .headerButton,
 button,
 .footerButton {
-  padding: 5px 50px;
+  padding: 10px 50px;
   text-transform: capitalize;
   text-decoration: none;
   font-size: 3rem;
@@ -353,11 +369,11 @@ button,
   transition: background 0.3s, color 0.3s;
 }
 
-.headerButton:hover, .headerButton:focus,
+.headerButton:hover, .headerButton:focus-within,
 button:hover,
-button:focus,
+button:focus-within,
 .footerButton:hover,
-.footerButton:focus {
+.footerButton:focus-within {
   background: #C7B198;
   color: #596E79;
 }
@@ -374,14 +390,14 @@ button {
 }
 
 header {
-  padding: 50px 0;
+  padding: 45px 0;
   background: #F0ECE3;
   position: relative;
 }
 
 header .textContainer {
   width: 85%;
-  padding: 40px 0px;
+  padding: 20px 0px;
   border: 10px solid #C7B198;
   border-radius: 50px;
   background: #DFD3C3;
@@ -460,13 +476,17 @@ header .overlay {
 }
 
 header .headerButton {
-  margin-top: 20px;
+  margin: 20px 0 20px 0;
   padding: 10px 65px;
 }
 
-.questionTemplate {
-  padding: 50px 0;
+main {
   background: #DFD3C3;
+}
+
+.questionTemplate {
+  height: 100vh;
+  padding: 50px 0;
   position: relative;
 }
 
@@ -527,6 +547,10 @@ header .headerButton {
           align-items: 0;
 }
 
+.questionTemplate form div {
+  margin-left: 40px;
+}
+
 .questionTemplate form .options {
   position: relative;
 }
@@ -542,6 +566,7 @@ header .headerButton {
   border: 3px solid #F0ECE3;
   border-radius: 50%;
   position: absolute;
+  left: -40px;
   top: 4px;
   -webkit-transition: background 0.3s;
   transition: background 0.3s;
@@ -596,9 +621,11 @@ header .headerButton {
 }
 
 footer {
+  height: 100vh;
   padding: 50px 0;
   background: #F0ECE3;
   position: relative;
+  display: none;
 }
 
 footer .flexContainer {
@@ -643,4 +670,114 @@ footer .imageContainer {
 
 footer .footerButton {
   margin: 20px auto 0 auto;
+}
+
+@media (max-width: 800px) {
+  header .textContainer h1 {
+    font-size: 5.5rem;
+  }
+  header .textContainer p {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 625px) {
+  header .textContainer h1 {
+    font-size: 4rem;
+  }
+  header .textContainer p {
+    font-size: 2rem;
+  }
+  header ul .imageContainer {
+    width: 150px;
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    padding: 0 0 45px 0;
+  }
+  header .wrapper {
+    width: 100%;
+  }
+  header .textContainer {
+    width: 100%;
+    padding: 30px 0;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 1029px) {
+  .questionTemplate .wrapper {
+    width: 90%;
+  }
+  .questionTemplate h2 {
+    font-size: 3.5rem;
+  }
+  .questionTemplate .imageContainer {
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 910px) {
+  .questionTemplate h2 {
+    font-size: 3rem;
+  }
+  .questionTemplate form label {
+    font-size: 2.25rem;
+  }
+  .questionTemplate .imageContainer img {
+    width: 250px;
+  }
+  .questionTemplate .flexContainer .content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 400px;
+            flex: 1 0 400px;
+  }
+  .questionTemplate .flexContainer .imageContainer {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 250px;
+            flex: 0 0 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  .questionTemplate .flexContainer {
+    display: block;
+  }
+  .questionTemplate .imageContainer {
+    margin: 40px auto 40px auto;
+    width: 65%;
+  }
+  .questionTemplate .imageContainer img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 460px) {
+  button {
+    font-size: 2.2rem;
+    padding: 10px 20px;
+  }
+  .questionTemplate {
+    padding: 20px 0;
+  }
+  .questionTemplate h2 {
+    font-size: 2.5rem;
+  }
+  .questionTemplate form {
+    padding: 0;
+    background: none;
+  }
+  .questionTemplate form label {
+    font-size: 2rem;
+  }
+  .questionTemplate .attributionBox {
+    display: block;
+  }
+  .questionTemplate .attribution {
+    padding: 5px;
+  }
 }
