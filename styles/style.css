@@ -576,10 +576,6 @@ main {
   opacity: 0;
 }
 
-.questionTemplate form .options input:focus {
-  opacity: 1;
-}
-
 .questionTemplate form .options .selected {
   width: 25px;
   height: 25px;
