@@ -1,4 +1,4 @@
-** Element Quiz **
+# Element Quiz
 
 This quiz is a fun application that asks the user five questions to determine which of the four classical elements (Earth, Wind, Water, Fire) they are most connected to. It was built as a way to demonstrate jQuery and JavaScript fundamentals.
 
