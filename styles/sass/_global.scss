@@ -23,31 +23,3 @@ img {
 body {
   background: $primary;
 }
-
-// Attribution 
-  .attributionBox {
-    @include flex(0, flex-end, 0);
-  }
-
-  .attribution {
-    width: 325px;
-    padding: 0 20px 5px 0;
-
-    text-align: left;
-    font-size: 1.6rem;
-
-    position: absolute;
-    bottom: 0;
-    right: 0;
-
-    a {
-      text-decoration: none;
-      color: #000000;
-
-      &:hover,
-      &:focus {
-        color: $tertiary;
-      }
-    }
-  }
-

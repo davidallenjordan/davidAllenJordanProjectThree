@@ -329,41 +329,6 @@ body {
   background: #F0ECE3;
 }
 
-.attributionBox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: 0;
-          flex-direction: 0;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: 0;
-      -ms-flex-align: 0;
-          align-items: 0;
-}
-
-.attribution {
-  width: 325px;
-  padding: 0 20px 5px 0;
-  text-align: left;
-  font-size: 1.6rem;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
-.attribution a {
-  text-decoration: none;
-  color: #000000;
-}
-
-.attribution a:hover, .attribution a:focus {
-  color: #C7B198;
-}
-
 .headerButton,
 button,
 .footerButton {
@@ -493,7 +458,7 @@ header {
 }
 
 main {
-  background: #DFD3C3;
+  background: #F0ECE3;
 }
 
 .questionTemplate {
@@ -548,7 +513,7 @@ main {
 
 .questionTemplate .textContainer,
 .questionTemplate form {
-  background: #F0ECE3;
+  background: #DFD3C3;
 }
 
 .questionTemplate form {
